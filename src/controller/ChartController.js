@@ -1,7 +1,7 @@
 const Answers = require("../models/Answers");
 
 module.exports = {
-  async makerOf1(res) {
+  async makerOf1(req, res) {
     const workshop = "Oficina 1";
 
     const makerOf1Happy = await Answers.find({
@@ -22,7 +22,7 @@ module.exports = {
       response3: "Triste"
     }).count();
 
-    return res.json({
+    return res.status(200).json({
       name: workshop,
       Feliz: makerOf1Happy,
       Medio: makerOf1Medium,
@@ -30,7 +30,7 @@ module.exports = {
     });
   },
 
-  async makerOf2(res) {
+  async makerOf2(req, res) {
     const workshop = "Oficina 2";
 
     const makerOf2Happy = await Answers.find({
@@ -51,7 +51,7 @@ module.exports = {
       response3: "Triste"
     }).count();
 
-    return res.json({
+    return res.status(200).json({
       name: workshop,
       Feliz: makerOf2Happy,
       Medio: makerOf2Medium,
@@ -59,7 +59,7 @@ module.exports = {
     });
   },
 
-  async makerOf3(res) {
+  async makerOf3(req, res) {
     const workshop = "Oficina 3";
 
     const makerOf3Happy = await Answers.find({
@@ -80,7 +80,7 @@ module.exports = {
       response3: "Triste"
     }).count();
 
-    return res.json({
+    return res.status(200).json({
       name: workshop,
       Feliz: makerOf3Happy,
       Medio: makerOf3Medium,
@@ -88,7 +88,7 @@ module.exports = {
     });
   },
 
-  async makerOf4(res) {
+  async makerOf4(req, res) {
     const workshop = "Oficina 4";
 
     const makerOf4Happy = await Answers.find({
@@ -109,7 +109,7 @@ module.exports = {
       response3: "Triste"
     }).count();
 
-    return res.json({
+    return res.status(200).json({
       name: workshop,
       Feliz: makerOf4Happy,
       Medio: makerOf4Medium,
