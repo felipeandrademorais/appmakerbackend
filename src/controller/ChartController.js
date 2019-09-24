@@ -1,6 +1,48 @@
 const Answers = require("../models/Answers");
 
 module.exports = {
+
+  async gera(req, res){
+    const veryHappy = await Answers.find({
+      response1: "Feira",
+      response2: "Gera",
+      response3: "10"
+    }).count();
+
+    const happy = await Answers.find({
+      response1: "Feira",
+      response2: "Gera",
+      response3: "8"
+    }).count();
+
+    const medium = await Answers.find({
+      response1: "Feira",
+      response2: "Gera",
+      response3: "6"
+    }).count();
+
+    const bad = await Answers.find({
+      response1: "Feira",
+      response2: "Gera",
+      response3: "4"
+    }).count();
+
+    const VeryBad = await Answers.find({
+      response1: "Feira",
+      response2: "Gera",
+      response3: "2"
+    }).count();
+
+    return res.status(200).json({
+      name: gera,
+      MuitoFeliz: veryHappy,
+      Feliz: happy,
+      Medio: medium,
+      Triste: bad,
+      MuitoTriste: VeryBad
+    });    
+  },
+
   async makerOf1(req, res) {
     const workshop = "Oficina 1";
 
