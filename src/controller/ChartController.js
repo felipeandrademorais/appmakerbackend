@@ -1,8 +1,7 @@
 const Answers = require("../models/Answers");
 
 module.exports = {
-
-  async gera(req, res){
+  async gera(req, res) {
     const veryHappy = await Answers.find({
       response1: "Feira",
       response2: "Gera",
@@ -34,13 +33,13 @@ module.exports = {
     }).count();
 
     return res.status(200).json({
-      name: gera,
+      name: "Gera",
       MuitoFeliz: veryHappy,
       Feliz: happy,
       Medio: medium,
       Triste: bad,
       MuitoTriste: VeryBad
-    });    
+    });
   },
 
   async makerOf1(req, res) {

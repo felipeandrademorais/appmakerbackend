@@ -7,6 +7,7 @@ const ChartController = require("./controller/ChartController");
 
 routes.get("/answers", AnswersController.index);
 routes.post("/answers", AnswersController.store);
+
 routes.get("/gera", ChartController.gera);
 routes.get("/makerof1", ChartController.makerOf1);
 routes.get("/makerof2", ChartController.makerOf2);
