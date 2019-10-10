@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const AnswersSchema = new mongoose.Schema({
     response1: String,
     response2: String,

@@ -4,6 +4,16 @@ const routes = express.Router();
 
 const AnswersController = require("./controller/AnswersController");
 const ChartController = require("./controller/ChartController");
+const UserController = require("./controller/UserController");
+const SessionController = require("./controller/SessionController");
+
+const authMiddleware = require('./middlewares/auth');
+
+routes.post("/user", UserController.store);
+
+routes.post("/session", SessionController.store);
+
+routes.use(authMiddleware);
 
 routes.get("/answers", AnswersController.index);
 routes.post("/answers", AnswersController.store);
