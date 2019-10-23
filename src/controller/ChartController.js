@@ -1,6 +1,11 @@
 const Answers = require("../models/Answers");
 
 module.exports = {
+  async mundoSenai(req, res) {
+    const { filter } = req.query;
+    const response = await Answers.find({}).count();
+  },
+
   async gera(req, res) {
     const veryHappy = await Answers.find({
       response1: "Feira",
