@@ -7,6 +7,11 @@ module.exports = {
   },
 
   async gera(req, res) {
+    const total = await Answers.find({
+      response1: "Feira",
+      response2: "Gera"
+    }).count();
+
     const veryHappy = await Answers.find({
       response1: "Feira",
       response2: "Gera",
@@ -43,7 +48,8 @@ module.exports = {
       Feliz: happy,
       Medio: medium,
       Triste: bad,
-      MuitoTriste: VeryBad
+      MuitoTriste: VeryBad,
+      Total: total
     });
   },
 
